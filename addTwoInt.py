@@ -4,10 +4,13 @@ import sys
 
 def add(a, b):
     x = a + b
-    print(x) 
+    return x
 
- 
-a = int( sys.argv[1] )
-b = int( sys.argv[2] )
-    
-add(a, b)
+try: 
+    a = int( sys.argv[1] )
+    b = int( sys.argv[2] )
+except IndexError:
+    print("Error")
+    raise(SystemExit)
+
+print(add(a,b))
